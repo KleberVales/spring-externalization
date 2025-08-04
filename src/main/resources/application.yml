@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: Spring-Core
+  profiles:
+    active: dev
+
+app:
+  message: "Mensagem padrão"
+  max-items: 10

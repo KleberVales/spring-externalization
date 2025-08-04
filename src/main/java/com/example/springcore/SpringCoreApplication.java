@@ -1,15 +1,23 @@
 package com.example.springcore;
 
-import com.example.springcore.config.AppConfig;
-import com.example.springcore.service.MessageService;
-import com.example.springcore.service.TimeService;
+import com.example.springcore.properties.AppProperties;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+@SpringBootApplication
 public class SpringCoreApplication {
+
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        MessageService message = context.getBean(MessageService.class);
-        System.out.print(message.getMessage());
+        // Inicia o contexto Spring Boot
+        ApplicationContext context = SpringApplication.run(SpringCoreApplication.class, args);
+
+        // Acessa as propriedades definidas via @Value
+        AppProperties props = context.getBean(AppProperties.class);
+        props.print();
+
+        // Demonstra qual perfil está ativo (dev ou prod)
+        String ambiente = context.getBean(String.class);
+        System.out.println("🔍 Perfil ativo: " + ambiente);
     }
 }

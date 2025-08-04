@@ -1,0 +1,3 @@
+app:
+  message: "Mensagem do ambiente DEV"
+  max-items: 5

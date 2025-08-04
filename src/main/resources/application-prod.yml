@@ -1,0 +1,3 @@
+app:
+  message: "Mensagem do ambiente PROD"
+  max-items: 100
