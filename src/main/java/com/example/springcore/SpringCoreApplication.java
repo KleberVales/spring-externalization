@@ -9,15 +9,20 @@ import org.springframework.context.ApplicationContext;
 public class SpringCoreApplication {
 
     public static void main(String[] args) {
-        // Inicia o contexto Spring Boot
         ApplicationContext context = SpringApplication.run(SpringCoreApplication.class, args);
 
-        // Acessa as propriedades definidas via @Value
-        AppProperties props = context.getBean(AppProperties.class);
-        props.print();
+        AppProperties appProperties = context.getBean(AppProperties.class);
+        appProperties.print();
 
-        // Demonstra qual perfil está ativo (dev ou prod)
         String ambiente = context.getBean(String.class);
-        System.out.println("🔍 Perfil ativo: " + ambiente);
+        System.out.println("Ambiente de Desenvolvimento: " + ambiente);
+
+
+
     }
 }
+
+/* - Mostrar no console uma mensagem de arquivo esterno e um valor
+   - Fazer um calculo com a linguagem SpEL
+   - Criar perfils dev e prod, deixar um ativo no arquivo externo
+ */

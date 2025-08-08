@@ -9,15 +9,15 @@ public class ProfileConfig {
 
     @Bean
     @Profile("dev")
-    public String ambienteDev() {
+    public String ambienteDev(){
         System.out.println("🔧 Bean do perfil DEV foi carregado.");
-        return "Ambiente de Desenvolvimento";
+        return "Retorno do perfil dev";
     }
 
     @Bean
     @Profile("prod")
-    public String ambienteProd() {
-        System.out.println("🚀 Bean do perfil PROD foi carregado.");
-        return "Ambiente de Produção";
+    public String ambienteProd(){
+        System.out.println("🔧 Bean do perfil Prod foi carregado.");
+        return "Retorno do perfil prod";
     }
 }

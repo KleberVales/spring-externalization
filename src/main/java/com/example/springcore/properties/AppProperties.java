@@ -12,25 +12,21 @@ public class AppProperties {
     @Value("${app.max-items}")
     private int maxItems;
 
-    @Value("#{2 * 3}") // Exemplo de SpEL
-    private int calculado;
+    @Value("#{3 + 6}")
+    private int calcula;
 
-    public void print() {
-        System.out.println("Mensagem: " + message);
-        System.out.println("Máx itens: " + maxItems);
-        System.out.println("SpEL: 2 * 3 = " + calculado);
+    public void print(){
+        System.out.println(message);
+        System.out.println(maxItems);
+        System.out.println(calcula);
     }
 
-    // Opcional: Getters, caso precise injetar em outros beans
+
     public String getMessage() {
         return message;
     }
-
-    public int getMaxItems() {
-        return maxItems;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public int getCalculado() {
-        return calculado;
-    }
 }

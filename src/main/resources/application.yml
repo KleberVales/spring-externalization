@@ -1,9 +1,5 @@
 spring:
   application:
-    name: Spring-Core
+    name: spring-externalization
   profiles:
     active: dev
-
-app:
-  message: "Mensagem padrão"
-  max-items: 10
