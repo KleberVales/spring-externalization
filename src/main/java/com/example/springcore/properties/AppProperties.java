@@ -9,24 +9,12 @@ public class AppProperties {
     @Value("${app.message}")
     private String message;
 
-    @Value("${app.max-items}")
-    private int maxItems;
+    // Exemplo com SpEL (fazendo cálculo direto)
+    @Value("#{2 * 10}")
+    private int calculation;
 
-    @Value("#{3 + 6}")
-    private int calcula;
-
-    public void print(){
-        System.out.println(message);
-        System.out.println(maxItems);
-        System.out.println(calcula);
+    public void print() {
+        System.out.println("Mensagem externa: " + message);
+        System.out.println("Cálculo com SpEL: " + calculation);
     }
-
-
-    public String getMessage() {
-        return message;
-    }
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
 }
